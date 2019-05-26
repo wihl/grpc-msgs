@@ -5,8 +5,9 @@
 
 It is highly recommended to setup a virtual environment first.
 
-Install the grpc-tools package
+Install grpc and the grpc-tools package
 ```
+pip install grpcio
 pip install grpcio-tools
 ```
 
@@ -32,16 +33,17 @@ The client takes the following command lines arguments:
 -m  Maximum message size
 ```
 
+The client will display a status update for every 1,000 streaming rows received.
+
 Example: generate 50 rows of 1024 bytes
 
 ```
 python route_guide_client.py -b 1024 -n 50
 ```
 
-
-Example: generate 1024 rows of 4mb
+Example: generate 10000 rows of 1 kb using 10,400,000 message size
 ```
-python route_guide_client.py -b 4194304 -n 1024
+python route_guide_client.py -b 1024 -n 10000 -m 10400000
 ```
 
 Example: generate 2 rows of 100 Mb using a 500 Mb message size
@@ -50,4 +52,5 @@ python route_guide_client.py -n 2 -b 134217728 -m 536870912
 ```
 ## Credits
 
-This is based on the gRPC [route guide](https://grpc.io/docs/tutorials/basic/python/) example
+This is based on the gRPC
+[route guide](https://grpc.io/docs/tutorials/basic/python/) example.

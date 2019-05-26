@@ -1,0 +1,29 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "io.grpc.examples.routeguide";
+option java_outer_classname = "RouteGuideProto";
+option objc_class_prefix = "RTG";
+
+package routeguide;
+
+// Interface exported by the server.
+service RouteGuide {
+  rpc GenRepeated(StreamDesc) returns (UniaryResponse) {}
+
+  rpc GenStream(StreamDesc) returns (stream StreamResponse) {}
+}
+
+message StreamDesc {
+  int64 bytes_per_row =1;
+  int64 num_rows = 2;
+}
+
+message UniaryResponse {
+   repeated StreamResponse msg = 1;
+}
+
+message StreamResponse {
+  string row = 1;
+  int32 crc=2;
+}

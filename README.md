@@ -11,9 +11,13 @@ number of rows to generate.
 It generates a random string for each row and adds a CRC32 check. The CRC32
 is validated on the client.
 
-The client makes the request twice: once using a repeated field
-and again using streaming. It reports the time taken for each
-type of request.
+The client makes the request up to three times:
+* once using a repeated field
+* if paging is specified, again using a repeated field but paged into smaller
+  sets of rows
+* Finally, using streaming.
 
-If the size of the message will exceed 1 Gb, only streaming is used. The
-Python server errors out with a message size larger than 1 Gb.
+It reports the time taken for each type of request.
+
+If the size of the message will exceed 1 Gb, only paging and streaming are used.
+The Python server errors out with a message size larger than 1 Gb.

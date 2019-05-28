@@ -54,7 +54,7 @@ def run(bytes_per_row, num_rows, max_msg, pagesize):
             print("-------------- call repeated --------------")
             start = time.time()
             gen_repeated(stub, bytes_per_row, num_rows, True)
-            print("elapsed time:", time.time() - start)
+            print("elapsed time:{:.3f}".format(time.time() - start))
         else:
             print("Message size too large; skipping repeat rows.")
 
@@ -70,13 +70,13 @@ def run(bytes_per_row, num_rows, max_msg, pagesize):
                 gen_repeated(stub, bytes_per_row, pagesize, False)
             if last_page > 0:
                 gen_repeated(stub, bytes_per_row, last_page, False)
-            print("elapsed time:", time.time() - start)
+            print("elapsed time:{:.3f}".format(time.time() - start))
 
         ### Streaming
         print("-------------- call stream ----------------")
         start = time.time()
-        gen_stream(stub, bytes_per_row, num_rows, True)
-        print("elapsed time:", time.time() - start)
+        gen_stream(stub, bytes_per_row, num_rows, False)
+        print("elapsed time:{:.3f}".format(time.time() - start))
 
 
 if __name__ == '__main__':

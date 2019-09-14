@@ -24,6 +24,6 @@ message UniaryResponse {
 }
 
 message StreamResponse {
-  string row = 1;
-  int32 crc=2;
+  bytes row = 1;
+  uint32 crc=2;
 }

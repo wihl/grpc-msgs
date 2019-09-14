@@ -41,7 +41,7 @@ class RouteGuideServicer(route_guide_pb2_grpc.RouteGuideServicer):
             row = fast_random_string(bytes_per_row)
             # In Python 3, crc32 returns an unsigned
             # https://docs.python.org/3/library/binascii.html
-            crc = toSigned32(binascii.crc32(row))
+            crc = binascii.crc32(row)
             # Check that CRC is working - randomly put in a bad value
             # if i % 100 == 0:
             #     crc = -1
@@ -57,7 +57,7 @@ class RouteGuideServicer(route_guide_pb2_grpc.RouteGuideServicer):
             row = fast_random_string(bytes_per_row)
             # In Python 3, crc32 returns an unsigned
             # https://docs.python.org/3/library/binascii.html
-            crc = toSigned32(binascii.crc32(row))
+            crc = binascii.crc32(row)
             # Check that CRC is working - randomly put in a bad value
             # if i % 100 == 0:
             #     crc = -1

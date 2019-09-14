@@ -20,7 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='routeguide',
   syntax='proto3',
   serialized_options=_b('\n\033io.grpc.examples.routeguideB\017RouteGuideProtoP\001\242\002\003RTG'),
-  serialized_pb=_b('\n\x11route_guide.proto\x12\nrouteguide\"5\n\nStreamDesc\x12\x15\n\rbytes_per_row\x18\x01 \x01(\x03\x12\x10\n\x08num_rows\x18\x02 \x01(\x03\"9\n\x0eUniaryResponse\x12\'\n\x03msg\x18\x01 \x03(\x0b\x32\x1a.routeguide.StreamResponse\"*\n\x0eStreamResponse\x12\x0b\n\x03row\x18\x01 \x01(\t\x12\x0b\n\x03\x63rc\x18\x02 \x01(\x05\x32\x96\x01\n\nRouteGuide\x12\x43\n\x0bGenRepeated\x12\x16.routeguide.StreamDesc\x1a\x1a.routeguide.UniaryResponse\"\x00\x12\x43\n\tGenStream\x12\x16.routeguide.StreamDesc\x1a\x1a.routeguide.StreamResponse\"\x00\x30\x01\x42\x36\n\x1bio.grpc.examples.routeguideB\x0fRouteGuideProtoP\x01\xa2\x02\x03RTGb\x06proto3')
+  serialized_pb=_b('\n\x11route_guide.proto\x12\nrouteguide\"5\n\nStreamDesc\x12\x15\n\rbytes_per_row\x18\x01 \x01(\x03\x12\x10\n\x08num_rows\x18\x02 \x01(\x03\"9\n\x0eUniaryResponse\x12\'\n\x03msg\x18\x01 \x03(\x0b\x32\x1a.routeguide.StreamResponse\"*\n\x0eStreamResponse\x12\x0b\n\x03row\x18\x01 \x01(\x0c\x12\x0b\n\x03\x63rc\x18\x02 \x01(\r2\x96\x01\n\nRouteGuide\x12\x43\n\x0bGenRepeated\x12\x16.routeguide.StreamDesc\x1a\x1a.routeguide.UniaryResponse\"\x00\x12\x43\n\tGenStream\x12\x16.routeguide.StreamDesc\x1a\x1a.routeguide.StreamResponse\"\x00\x30\x01\x42\x36\n\x1bio.grpc.examples.routeguideB\x0fRouteGuideProtoP\x01\xa2\x02\x03RTGb\x06proto3')
 )
 
 
@@ -104,14 +104,14 @@ _STREAMRESPONSE = _descriptor.Descriptor(
   fields=[
     _descriptor.FieldDescriptor(
       name='row', full_name='routeguide.StreamResponse.row', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=_b("").decode('utf-8'),
+      number=1, type=12, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b(""),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='crc', full_name='routeguide.StreamResponse.crc', index=1,
-      number=2, type=5, cpp_type=1, label=1,
+      number=2, type=13, cpp_type=3, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -138,25 +138,25 @@ DESCRIPTOR.message_types_by_name['UniaryResponse'] = _UNIARYRESPONSE
 DESCRIPTOR.message_types_by_name['StreamResponse'] = _STREAMRESPONSE
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
-StreamDesc = _reflection.GeneratedProtocolMessageType('StreamDesc', (_message.Message,), dict(
-  DESCRIPTOR = _STREAMDESC,
-  __module__ = 'route_guide_pb2'
+StreamDesc = _reflection.GeneratedProtocolMessageType('StreamDesc', (_message.Message,), {
+  'DESCRIPTOR' : _STREAMDESC,
+  '__module__' : 'route_guide_pb2'
   # @@protoc_insertion_point(class_scope:routeguide.StreamDesc)
-  ))
+  })
 _sym_db.RegisterMessage(StreamDesc)
 
-UniaryResponse = _reflection.GeneratedProtocolMessageType('UniaryResponse', (_message.Message,), dict(
-  DESCRIPTOR = _UNIARYRESPONSE,
-  __module__ = 'route_guide_pb2'
+UniaryResponse = _reflection.GeneratedProtocolMessageType('UniaryResponse', (_message.Message,), {
+  'DESCRIPTOR' : _UNIARYRESPONSE,
+  '__module__' : 'route_guide_pb2'
   # @@protoc_insertion_point(class_scope:routeguide.UniaryResponse)
-  ))
+  })
 _sym_db.RegisterMessage(UniaryResponse)
 
-StreamResponse = _reflection.GeneratedProtocolMessageType('StreamResponse', (_message.Message,), dict(
-  DESCRIPTOR = _STREAMRESPONSE,
-  __module__ = 'route_guide_pb2'
+StreamResponse = _reflection.GeneratedProtocolMessageType('StreamResponse', (_message.Message,), {
+  'DESCRIPTOR' : _STREAMRESPONSE,
+  '__module__' : 'route_guide_pb2'
   # @@protoc_insertion_point(class_scope:routeguide.StreamResponse)
-  ))
+  })
 _sym_db.RegisterMessage(StreamResponse)
 
 

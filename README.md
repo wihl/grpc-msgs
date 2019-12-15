@@ -21,3 +21,5 @@ It reports the time taken for each type of request.
 
 If the size of the message will exceed 1 Gb, only paging and streaming are used.
 The Python server errors out with a message size larger than 1 Gb.
+
+Requires Python 3
